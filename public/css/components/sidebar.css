@@ -1,0 +1,95 @@
+.bars {
+	display: inline-block;
+	cursor: pointer;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 1001;
+	padding-bottom: 1.5em;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: #000000;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+.change .bar1 {
+	transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+	opacity: 0;
+}
+
+.change .bar3 {
+	transform: translate(0, -11px) rotate(45deg);
+}
+
+.sidebar {
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	top: 0;
+	left: -250px;
+	background-color: #b839a7;
+	background: linear-gradient(to bottom, #D69ADE, #493D9E);
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.3s;
+	z-index: 1000;
+}
+
+.sidebar.active {
+	left: 0;
+}
+
+/* When sidebar is active, push main content to the right */
+body.sidebar-active .main,
+body.sidebar-active .chat-container {
+	margin-left: 250px;
+	transition: margin-left 0.3s;
+}
+
+/* On small screens, sidebar overlays content instead of pushing */
+@media (max-width: 600px) {
+	body.sidebar-active .main,
+	body.sidebar-active .chat-container {
+		margin-left: 0;
+	}
+	.sidebar {
+		width: 80vw;
+		left: -80vw;
+	}
+	.sidebar.active {
+		left: 0;
+		width: 80vw;
+	}
+}
+
+.sidebar h2 {
+	color: white;
+	padding-left: 20px;
+}
+
+.sidebar ul {
+	list-style-type: none;
+	padding-left: 20px;
+}
+
+.sidebar ul li a {
+	color: white;
+	text-decoration: none;
+	display: block;
+	padding: 10px 0;
+	margin-left: 2px
+}
+
+.sidebar ul li a:hover {
+	background: #d899e0;
+	width: 50%;
+}

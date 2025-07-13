@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Heyyo - Chat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back_ios" />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/chat.css">
+  <link rel="stylesheet" href="css/components/sidebar.css">
+</head>
+
+<body>
+  <div class="bars" onclick="toggleMenu(this)" id="bars">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="chat.html">Home</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#" onclick="logout()">Log Out</a></li>
+      <li><a href="#" onclick="deleteAccount()">Delete Account</a></li>
+    </ul>
+  </div>
+
+  <div class="chat-container">
+    <div class="contact-list" id="contact-list">
+      <h2>Contacts</h2>
+      <div class="contact">
+        <form onsubmit="return searchUser(event)">
+          <input type="text" placeholder="Enter name...." id="searchInput">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div id="contacts-container"></div>
+    </div>
+    <div class="chat-window" id="chat-window" style="display:none;">
+      <div class="chat-header" id="header">
+        <button id="back-to-contacts" class="back-btn" title="Back"><span class="material-symbols-outlined">arrow_back_ios</span></button>
+        <span id="chat-contact-name">Not Selected</span>
+      </div>
+      <div class="chat-messages"></div>
+      <div class="chat-input">
+        <textarea type="text" placeholder="Type your message..." id=messagebox></textarea>
+        <div class="chat-send">
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/services/contactManager.js"></script>
+  <script src="js/pages/chat.js"></script>
+  <script src="js/components/sidebar.js"></script>
+  <script src="js/components/logout.js"></script>
+  <script src="js/components/deleteAccount.js"></script>
+</body>
+
+</html>

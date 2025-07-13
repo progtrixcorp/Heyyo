@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Heyyo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/feedback.css">
+  <link rel="stylesheet" href="css/components/sidebar.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1>Heyyo</h1>
+  </div>
+
+  <div class="bars" onclick="toggleMenu(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Sign up</a></li>
+      <li><a href="index.html">Login</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+
+    <form id="feedbackForm" class="feedback-form" action="/feedback">
+      <h2>We'd love your feedback!</h2>
+      <input type="text" placeholder="Your Name" name="name" required>
+      <input type="email" placeholder="Your Email" name="email" required>
+      <textarea rows="6" placeholder="Your feedback..." name="message" required></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <div id="successMessage" class="success-message">
+      Thank you for your feedback!
+    </div>
+
+  </div>
+
+  <script src="js/pages/feedback.js"></script>
+  <script src="js/components/sidebar.js"></script>
+</body>
+
+</html>
